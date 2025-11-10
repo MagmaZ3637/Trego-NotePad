@@ -11,7 +11,7 @@ class NotesListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Catatan Saya')),
+      appBar: AppBar(title: const Text('Trego Notepad')),
       body: BlocBuilder<NotesListBloc, NotesListState>(
         builder: (context, state) {
           if (state is NotesListLoading) {
