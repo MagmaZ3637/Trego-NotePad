@@ -7,6 +7,7 @@
 - 🌱 Zidan Alfa Permana: **XI/PPLG-3/29**
 
 <h3>✅ Features</h3>
+
 1. [x] Bisa membuat note baru
 2. [x] Bisa mengedit note
 3. [x] Bisa menghapus note
@@ -31,6 +32,7 @@
 <img src="images/DeleteDone.jpg" alt="Del Done" />
 
 <h3>📥 Installation</h3>
+
 1. Download aplikasi Trego Notepad Melalui `Releases`.
 2. Pilih file `trego-notepad.apk`.
 3. Install aplikasi nya, lalu aplikasi siap digunakan!
