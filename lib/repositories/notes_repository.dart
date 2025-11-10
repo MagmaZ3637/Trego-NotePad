@@ -6,23 +6,40 @@ class NotesRepository {
 
   NotesRepository(this.notesBox);
 
-  // Menyimpan note baru
-  Future<void> saveNote(Note note) async {
+  // CREATE
+  Future<String> saveNote(Note note) async {
     final id = await notesBox.add(note.toMap());
-    // Tidak perlu put() lagi, karena add() sudah menyimpan data
     note = note.copyWith(id: id);
+    await notesBox.put(id, note.toMap());
+    return "Note berhasil disimpan!";
   }
 
-  // Mengambil semua note
+  // READ
   List<Note> getAllNotes() {
     return notesBox.values
         .map((map) => Note.fromMap(Map<String, dynamic>.from(map)))
         .toList()
-      ..sort((a, b) => b.createdAt.compareTo(a.createdAt)); // Urutkan terbaru
+      ..sort((a, b) => b.createdAt.compareTo(a.createdAt));
   }
 
-  // Menghapus note berdasarkan ID
-  Future<void> deleteNote(int id) async {
-    await notesBox.delete(id);
+  // UPDATE
+  Future<String> updateNote(Note note) async {
+    try {
+      if (note.id == null) return "Gagal: ID tidak ditemukan";
+      await notesBox.put(note.id, note.toMap());
+      return "Catatan berhasil diperbarui";
+    } catch (e) {
+      return "Gagal memperbarui catatan: $e";
+    }
+  }
+
+  // DELETE
+  Future<String> deleteNote(int id) async {
+    if (notesBox.containsKey(id)) {
+      await notesBox.delete(id);
+      return "Note berhasil dihapus!";
+    } else {
+      return "Note dengan ID $id tidak ditemukan!";
+    }
   }
 }

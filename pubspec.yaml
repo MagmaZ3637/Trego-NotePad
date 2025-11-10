@@ -1,4 +1,4 @@
-name: "Trego Notepad"
+name: trego_notepad
 description: "Aplikasi flutter notepad sederhana menggunakan db hive"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:note_pad/repositories/notes_repository.dart';
-import 'package:note_pad/screens/NotesListScreen.dart';
+import 'package:trego_notepad/repositories/notes_repository.dart';
+import 'package:trego_notepad/screens/NotesListScreen.dart';
 import 'blocs/notes_list_bloc/notes_list_bloc.dart';
 
 void main() async {
